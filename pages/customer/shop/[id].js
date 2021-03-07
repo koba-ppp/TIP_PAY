@@ -19,18 +19,9 @@ const RegisterPage = (props) => {
   return (
     <Layout>
       <main className={styles.main}>
-        <h2>商品一覧</h2>
         <Elements stripe={stripePromise}>
           <div className={styles.grid}>
-            {props.itemList.map((item, index) => (
-              <div className={styles.card} key={index}>
-                <CheckoutForm
-                  item={item}
-                  customerId={customerState.id}
-                  shopId={props.shopId}
-                />
-              </div>
-            ))}
+            <CheckoutForm customerId={customerState.id} shopId={props.shopId} />
           </div>
         </Elements>
       </main>
@@ -39,24 +30,8 @@ const RegisterPage = (props) => {
 };
 
 export const getServerSideProps = async (ctx) => {
-  const itemList = [
-    {
-      name: "キノコのかさ",
-      price: 100,
-    },
-    {
-      name: "キノコのスツール",
-      price: 200,
-    },
-    {
-      name: "キノコのかべがみ",
-      price: 300,
-    },
-  ];
-
   return {
     props: {
-      itemList: itemList,
       shopId: ctx.query.id,
     },
   };

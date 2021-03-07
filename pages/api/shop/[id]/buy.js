@@ -2,12 +2,7 @@ import stripe from "../../../../lib/stripe";
 
 export default async (req, res) => {
   try {
-    //itemオブジェクト
-    // {
-    //   name: "キノコのかさ",
-    //   price: 100,
-    // }
-    const item = req.body.item;
+    const price = req.body.price;
     // 店舗のID
     const stripeConnectedAccountId = req.query.id;
     // 顧客のID
@@ -37,7 +32,7 @@ export default async (req, res) => {
     // 店舗毎(stripeConnectedAccountId)に顧客情報を複製(customer))を複製
     const clonedCustomer = await stripe.customers.create(
       {
-        payment_method: clonedPaymentMetho,
+        payment_method: clonedPaymentMethod.id,
       },
       {
         stripeAccount: stripeConnectedAccountId,
@@ -48,13 +43,13 @@ export default async (req, res) => {
     // intentは支払いフローを定義するオブジェクト
     const paymentIntent = await stripe.paymentIntents.create(
       {
-        amount: item.price,
+        amount: price,
         currency: "jpy",
         payment_method_types: ["card"],
         payment_method: clonedPaymentMethod.id,
         customer: clonedCustomer.id,
-        description: `${item.name}の購入代金`,
-        metadata: { name: item.name, price: item.price },
+        // description: `${item.name}の購入代金`,
+        // metadata: { name: item.name, price: item.price },
       },
       {
         stripeAccount: stripeConnectedAccountId,

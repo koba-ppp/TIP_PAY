@@ -5,6 +5,7 @@ import styles from "../styles/Home.module.scss";
 
 const CheckoutForm = (props) => {
   const [message, setMessage] = React.useState();
+  const [customPrice, setCustomPrice] = React.useState();
 
   const stripe = useStripe();
 
@@ -13,7 +14,7 @@ const CheckoutForm = (props) => {
     //現在の顧客のID
     const result = await POST(`/api/shop/${props.shopId}/buy`, {
       customer_id: props.customerId,
-      item: props.item,
+      price: props.price,
     });
 
     const confirm_result = window.confirm(
@@ -31,11 +32,7 @@ const CheckoutForm = (props) => {
           console.log("失敗しました");
           setMessage("失敗しました");
         });
-      // if (paymentResult.error) {
-      //   setMessage("失敗しました");
-      // } else {
-      //   setMessage("購入しました");
-      // }
+
       paymentResult();
     } else {
       setMessage("");
@@ -43,9 +40,16 @@ const CheckoutForm = (props) => {
   };
 
   return (
-    <div onClick={() => handleSubmit()}>
-      <h3>{props.item.name}</h3>
-      <div>¥{props.item.price}</div>
+    <div>
+      <div>
+        <input
+          value={customPrice}
+          onChange={(e) => setCustomPrice(e.target.value)}
+        ></input>
+
+        <span>円</span>
+      </div>
+      <button onClick={() => handleSubmit()}>チップを払います</button>
       {message && <div className={styles.processing}>{message}</div>}
     </div>
   );
