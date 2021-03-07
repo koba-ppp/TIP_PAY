@@ -37,7 +37,6 @@ const RegisterPage = () => {
         {customerState.client_secret ? (
           <div className={styles.cardregister}>
             <h4>クレジットカードを登録してください</h4>
-
             {loading ? (
               "登録中..."
             ) : (
@@ -54,11 +53,6 @@ const RegisterPage = () => {
           <div className={styles.nameregister}>
             <h4>お客様のお名前を登録してください</h4>
             <form onSubmit={(e) => registerCustomer(e)}>
-              {/* <input
-                type="text"
-                defaultValue={name}
-                onChange={(e) => setName(e.target.value)}
-              ></input> */}
               <TextField
                 type="text"
                 id="outlined-basic"

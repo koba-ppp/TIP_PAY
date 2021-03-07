@@ -2,6 +2,10 @@ import { useStripe } from "@stripe/react-stripe-js";
 import { POST } from "../lib/axios";
 import * as React from "react";
 import styles from "../styles/Home.module.scss";
+import { Button } from "@material-ui/core";
+import { TextField } from "@material-ui/core";
+import PageHeader from "./PageHeader";
+import Layout from "./Layout";
 
 const CheckoutForm = (props) => {
   const [message, setMessage] = React.useState();
@@ -10,7 +14,7 @@ const CheckoutForm = (props) => {
   const stripe = useStripe();
 
   const handleSubmit = async () => {
-    setMessage("処理中");
+    setMessage("処理中...");
     //現在の顧客のID
     const result = await POST(`/api/shop/${props.shopId}/buy`, {
       customer_id: props.customerId,
@@ -40,18 +44,26 @@ const CheckoutForm = (props) => {
   };
 
   return (
-    <div>
-      <div>
-        <input
-          value={customPrice}
-          onChange={(e) => setCustomPrice(e.target.value)}
-        ></input>
+    <>
+      <div className={styles.checkoutform}>
+        {message && <div className={styles.processing}>{message}</div>}
 
-        <span>円</span>
+        <form onSubmit={() => handleSubmit()}>
+          <TextField
+            type="text"
+            id="outlined-basic"
+            label="金額"
+            variant="outlined"
+            defaultValue={customPrice}
+            onChange={(e) => setCustomPrice(e.target.value)}
+          />
+          <br></br>
+          <Button onClick={(e) => handleSubmit(e)} variant="contained">
+            決済する
+          </Button>
+        </form>
       </div>
-      <button onClick={() => handleSubmit()}>チップを払います</button>
-      {message && <div className={styles.processing}>{message}</div>}
-    </div>
+    </>
   );
 };
 

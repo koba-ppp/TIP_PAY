@@ -1,10 +1,12 @@
 import styles from "../../../styles/Home.module.scss";
 import stripe from "../../../lib/stripe";
 import Layout from "../../../component/Layout";
+import PageHeader from "../../../component/PageHeader";
 
 const RegisterPage = (props) => {
   return (
     <Layout>
+      <PageHeader />
       <main className={styles.main}>
         <h2>店舗画面</h2>
         <div className={styles.grid}>

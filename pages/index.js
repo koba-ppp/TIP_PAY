@@ -35,6 +35,23 @@ const IndexPage = (props) => {
         <div className={styles.header}>
           <div className={styles.header_inner}>
             <h1>TIPPAY</h1>
+            <ul className={styles.header_right}>
+              <li onClick={() => getSetLink()}>店舗の登録</li>
+              <li>
+                <Link href="customer/register">
+                  <a>
+                    <h3>クレジットカードを登録する</h3>
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="owner/shop">
+                  <a>
+                    <h3>アカウント情報</h3>
+                  </a>
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
         <div className={styles.firstview}>
@@ -88,14 +105,6 @@ const IndexPage = (props) => {
               </Link>
             ))}
           </div>
-        </div>
-        <div className={styles.grid}>
-          <Link href="owner/shop">
-            <a className={styles.card}>
-              <h3>店舗の一覧</h3>
-              <p>口座登録が完了した店舗の一覧</p>
-            </a>
-          </Link>
         </div>
       </main>
     </Layout>
