@@ -1,5 +1,8 @@
 # TIPPAY
 
+## URL
+https://tip-pay-141c9x20g-koba-ppp.vercel.app/
+
 チップをオンライン上で支払うことができるCtoCプラットフォーム
 ###### どんなユーザーに？
 接客業就業者
@@ -20,40 +23,23 @@
 * 顧客のクレジットカードを登録
 * 顧客は店舗に対してチップを支払う
 
-## デモ
+## 実装予定の機能
+* 店舗の画像を登録
+* チップの支払われた量で店舗のサービスを評価する（食べログの星みたいなもの）
+* 店舗検索機能
 
-![デモ](https://image-url.gif)
-
-
-## 環境
-
-* 要件
-* 要件
-* 要件
-
+## ローカルでの動作方法
+`
+npm run dev
+`
 
 ## 注意事項
 
-注意点などがあれば書く
-
-
-## 文責
-
-作成情報を列挙する
-
-* 作成者
-* 所属
-* E-mail
-* [@twitter_username](https://twitter.com/twitter_username)
-
-
-## ライセンス
-
-ライセンスを明示する
-
-"リポジトリ名" is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
-
+テスト用の口座番号は”4242424242424242”
 
 ## 参考文献
 
-参考にした情報源（サイト・論文）などの情報、リンク
+* [Next公式ドキュメント](https://nextjs.org/docs/getting-started)
+* [StripeAPIリファレンス](https://stripe.com/docs/api)
+* [Stripe Connect公式ドキュメント](https://stripe.com/docs/connect)
+* [Stripe Connect 101](https://qiita.com/y_toku/items/7bfa42793801dfc5415d)
