@@ -1,30 +1,53 @@
-このプロジェクトは初期構築を[`create-next-app`]で行っております。
-(https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-## Getting Started
+最初にロゴ・アイキャッチ画像などを表示
 
-First, run the development server:
+# リポジトリ名
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+概要を記述する
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## デモ
 
-## Learn More
+![デモ](https://image-url.gif)
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 使い方
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+DEMOの実行方法など、"Webアプリ"の基本的な使い方を説明
 
-## Deploy on Vercel
+1. 使い方
+2. 使い方
+3. 使い方
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 環境
+
+* 要件
+* 要件
+* 要件
+
+
+## 注意事項
+
+注意点などがあれば書く
+
+
+## 文責
+
+作成情報を列挙する
+
+* 作成者
+* 所属
+* E-mail
+* [@twitter_username](https://twitter.com/twitter_username)
+
+
+## ライセンス
+
+ライセンスを明示する
+
+"リポジトリ名" is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
+
+
+## 参考文献
+
+参考にした情報源（サイト・論文）などの情報、リンク
